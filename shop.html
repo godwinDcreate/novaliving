@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <title>Collections | NØVA Living</title>
+    <meta name="description" content="Browse refined furniture and décor collections from NØVA Living, thoughtfully crafted for modern, comfortable interiors.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="bg-gray-dark sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <!-- Left section: Logo -->
+            <a href="index.html" class="flex items-center">
+              <div>
+                  <img src="assets/images/novaliving-logo-dark.svg" alt="NØVA Living logo" class="h-14 w-auto mr-4">
+              </div>
+            </a>
+
+            <!-- Hamburger menu (for mobile) -->
+            <div class="flex lg:hidden">
+                <button id="hamburger" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Center section: Menu -->
+            <nav class="hidden lg:flex md:flex-grow justify-center">
+              <ul class="flex justify-center space-x-4 text-white">
+                  <li><a href="index.html" class="hover:text-secondary font-semibold">Home</a></li>
+                  <li><a href="shop.html" class="hover:text-secondary font-semibold">Collections</a></li>
+                  <li><a href="shop.html" class="hover:text-secondary font-semibold">New Arrivals</a></li>
+                  <li><a href="index.html#journal" class="hover:text-secondary font-semibold">Journal</a></li>
+                  <li><a href="about.html" class="hover:text-secondary font-semibold">About</a></li>
+                  <li><a href="contact.html" class="hover:text-secondary font-semibold">Contact</a></li>
+                  <li><a href="cart.html" class="hover:text-secondary font-semibold">Cart</a></li>
+              </ul>
+            </nav>
+
+            <!-- Right section: Buttons (for desktop) -->
+            <div class="hidden lg:flex items-center space-x-4 relative">
+              <a href="register.html"
+                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
+              <a href="register.html"
+                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
+              <div class="relative group cart-wrapper">
+                  <a href="/cart.html" >
+                      <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
+                  </a>
+                  <!-- Cart dropdown -->
+                  <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
+                      <div class="space-y-4">
+                          <!-- product item -->
+                          <div class="flex items-center justify-between pb-4 border-b border-gray-line">
+                              <div class="flex items-center">
+                                  <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=200&q=80" alt="Haven Modular Sofa" class="h-12 w-12 object-cover rounded mr-2">
+                                  <div>
+                                      <p class="font-semibold">Haven Modular Sofa</p>
+                                      <p class="text-sm">Quantity: 1</p>
+                                  </div>
+                              </div>
+                              <p class="font-semibold">$3,890</p>
+                          </div>
+                          <!-- product item -->
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=200&q=80" alt="Nord Lounge Chair" class="h-12 w-12 object-cover rounded mr-2">
+                                <div>
+                                    <p class="font-semibold">Nord Lounge Chair</p>
+                                    <p class="text-sm">Quantity: 1</p>
+                                </div>
+                            </div>
+                            <p class="font-semibold">$1,240</p>
+                        </div>
+                      </div>
+                      <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
+                  </div>
+              </div>
+              <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
+                  <img src="assets/images/search-icon.svg" alt="Search"
+                      class="h-6 w-6 transition-transform transform group-hover:scale-120">
+              </a>
+              <!-- Search field -->
+              <div id="search-field"
+                  class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+                  <input type="text" class="w-full p-2 border border-gray-300 rounded"
+                      placeholder="Search for products...">
+              </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
+      <ul class="w-full">
+          <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Collections</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">New Arrivals</a></li>
+          <li><a href="index.html#journal" class="hover:text-secondary font-bold block py-2">Journal</a></li>
+          <li><a href="about.html" class="hover:text-secondary font-bold block py-2">About</a></li>
+          <li><a href="contact.html" class="hover:text-secondary font-bold block py-2">Contact</a></li>
+          <li><a href="cart.html" class="hover:text-secondary font-bold block py-2">Cart</a></li>
+      </ul>
+      <div class="flex flex-col mt-6 space-y-2 items-center">
+          <a href="contact.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Book a Visit</a>
+          <a href="cart.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">View Cart</a>
+      </div>
+      <div class="top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+          <input type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Search for pieces...">
+      </div>
+    </nav>
+
+    <!-- Shop -->
+    <section id="shop">
+        <div class="container mx-auto">
+            <!-- Top Filter -->
+            <div class="flex flex-col md:flex-row justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">Show
+                        On
+                        Sale</button>
+                    <button
+                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">List
+                        View</button>
+                    <button
+                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">Grid
+                        View</button>
+                </div>
+                <div class="flex mt-5 md:mt-0 space-x-4">
+                    <div class="relative">
+                        <select
+                            class="block appearance-none w-full bg-white border  hover:border-primary px-4 py-2 pr-8 rounded-full shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <option>Sort by Latest</option>
+                            <option>Sort by Popularity</option>
+                            <option>Sort by A-Z</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center px-2">
+                            <img id="arrow-down" class="h-4 w-4" src="assets/images/filter-down-arrow.svg"
+                                alt="filter arrow">
+                            <img id="arrow-up" class="h-4 w-4 hidden" src="assets/images/filter-up-arrow.svg"
+                                alt="filter arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Filter Toggle Button for Mobile -->
+            <div class="block md:hidden text-center mb-4">
+                <button id="products-toggle-filters"
+                    class="bg-primary text-white py-2 px-4 rounded-full focus:outline-none">Show Filters</button>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <!-- Filters -->
+                <div id="filters" class="w-full md:w-1/4 p-4 hidden md:block">
+                    <!-- Category Filter -->
+                    <div class="mb-6 pb-8 border-b border-gray-line">
+                        <h3 class="text-lg font-semibold mb-6">Category</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Living Room</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Dining</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Bedroom</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Size Filter -->
+                    <div class="mb-6 pb-8 border-b border-gray-line">
+                        <h3 class="text-lg font-semibold mb-6">Size</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Compact</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Standard</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Extended</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Color Filter -->
+                    <div class="mb-6 pb-8 border-b border-gray-line">
+                        <h3 class="text-lg font-semibold mb-6">Color</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center custom-color-checkbox" data-color="#A56B3F">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Oak</span>
+                            </label>
+                            <label class="flex items-center custom-color-checkbox" data-color="#6A4E3A">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Walnut</span>
+                            </label>
+                            <label class="flex items-center custom-color-checkbox" data-color="#D9C4A0">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Stone</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Brand Filter -->
+                    <div class="mb-6 pb-8 border-b border-gray-line">
+                        <h3 class="text-lg font-semibold mb-6">Brand</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">NØVA Studio</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Atelier House</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">Lumen Works</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Rating Filter -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-6">Rating</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">★★★★★</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">★★★★☆</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox custom-checkbox">
+                                <span class="ml-2">★★★☆☆</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Products List -->
+                <div class="w-full md:w-3/4 p-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=900&q=80" alt="Haven Modular Sofa"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold mb-2">Haven Modular Sofa</a>
+                            <p class="my-2">Living Room</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-primary">$3,890</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Nord Lounge Chair"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold mb-2">Nord Lounge Chair</a>
+                            <p class="my-2">Accent Seating</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-gray-900">$1,240</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Aspen Dining Table"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold mb-2">Aspen Dining Table</a>
+                            <p class="my-2">Dining</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-gray-900">$2,640</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Verona Coffee Table"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold mb-2">Verona Coffee Table</a>
+                            <p class="my-2">Living Room</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-primary">$1,760</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Luna Bed Frame"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold">Luna Bed Frame</a>
+                            <p class="my-2">Bedroom</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-primary">$2,180</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Aurora Floor Lamp"
+                                class="w-full object-cover mb-4 rounded-lg">
+                            <a href="single-product-page.html" class="text-lg font-semibold mb-2">Aurora Floor Lamp</a>
+                            <p class="my-2">Lighting</p>
+                            <div class="flex items-center mb-4">
+                                <span class="text-lg font-bold text-gray-900">$980</span>
+                            </div>
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-8">
+                        <nav aria-label="Page navigation">
+                            <ul class="inline-flex space-x-2">
+                                <li>
+                                    <a href="#"
+                                        class="bg-primary text-white w-10 h-10 flex items-center justify-center rounded-full">1</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">2</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop category description -->
+    <section id="shop-category-description" class="py-8">
+        <div class="container mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4">Furniture Curated for Modern Living</h2>
+                <p class="mb-4">
+                    Discover a refined collection of furniture designed for comfort, longevity, and effortless style. Whether you are furnishing a new home or refining a single room, our pieces bring warmth, proportion, and thoughtful detail to everyday spaces.
+                </p>
+                <p>
+                    From sculptural seating to dining essentials and statement lighting, each piece is chosen for its craftsmanship, longevity, and ability to feel grounded in contemporary interiors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-line">
+        <div class="container mx-auto px-4 py-10">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full sm:w-1/6 px-4 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Shop</h3>
+                    <ul>
+                        <li><a href="shop.html" class="hover:text-primary">Collections</a></li>
+                        <li><a href="shop.html" class="hover:text-primary">New Arrivals</a></li>
+                        <li><a href="shop.html" class="hover:text-primary">Best Sellers</a></li>
+                        <li><a href="shop.html" class="hover:text-primary">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/6 px-4 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-primary">About</a></li>
+                        <li><a href="index.html#journal" class="hover:text-primary">Journal</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/6 px-4 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Customer Care</h3>
+                    <ul>
+                        <li><a href="cart.html" class="hover:text-primary">Shipping</a></li>
+                        <li><a href="cart.html" class="hover:text-primary">Returns</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">FAQs</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Support</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-1/6 px-4 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Social</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-primary">Instagram</a></li>
+                        <li><a href="#" class="hover:text-primary">Facebook</a></li>
+                        <li><a href="#" class="hover:text-primary">Pinterest</a></li>
+                        <li><a href="#" class="hover:text-primary">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-2/6 px-4 mb-8">
+                    <h3 class="text-lg font-semibold mb-4">NØVA Living</h3>
+                    <p><img src="assets/images/novaliving-logo.svg" alt="NØVA Living logo" class="h-[60px] mb-4"></p>
+                    <p>2210 Maple Avenue</p>
+                    <p>Portland, Oregon</p>
+                    <p class="text-xl font-bold my-4">+1 (503) 555-2481</p>
+                    <a href="mailto:hello@novaliving.com" class="underline">hello@novaliving.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-6 border-t border-gray-line">
+            <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+                <div class="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
+                    <p class="mb-2 font-bold">&copy; 2026 NØVA Living. Crafted for modern interiors.</p>
+                    <ul class="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
+                        <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-primary">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/4 text-center lg:text-right">
+                    <img src="assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
+                    <img src="assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
+                    <img src="assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

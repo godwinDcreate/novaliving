@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <title>NØVA Living | Premium Furniture & Home Living</title>
+    <meta name="description" content="Discover NØVA Living, a contemporary furniture and home décor studio crafting timeless pieces for elegant, modern interiors.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-gray-dark sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <!-- Left section: Logo -->
+            <a href="index.html" class="flex items-center">
+              <div>
+                  <img src="assets/images/novaliving-logo-dark.svg" alt="NØVA Living logo" class="h-14 w-auto mr-4">
+              </div>
+            </a>
+
+            <!-- Hamburger menu (for mobile) -->
+            <div class="flex lg:hidden">
+                <button id="hamburger" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Center section: Menu -->
+            <nav class="hidden lg:flex md:flex-grow justify-center">
+              <ul class="flex justify-center space-x-4 text-white">
+                  <li><a href="index.html" class="hover:text-secondary font-semibold">Home</a></li>
+                  <li><a href="shop.html" class="hover:text-secondary font-semibold">Collections</a></li>
+                  <li><a href="shop.html" class="hover:text-secondary font-semibold">New Arrivals</a></li>
+                  <li><a href="index.html#journal" class="hover:text-secondary font-semibold">Journal</a></li>
+                  <li><a href="about.html" class="hover:text-secondary font-semibold">About</a></li>
+                  <li><a href="contact.html" class="hover:text-secondary font-semibold">Contact</a></li>
+                  <li><a href="cart.html" class="hover:text-secondary font-semibold">Cart</a></li>
+              </ul>
+            </nav>
+
+            <!-- Right section: Buttons (for desktop) -->
+            <div class="hidden lg:flex items-center space-x-4 relative">
+              <a href="register.html"
+                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
+              <a href="register.html"
+                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
+              <div class="relative group cart-wrapper">
+                  <a href="/cart.html" >
+                      <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
+                  </a>
+                  <!-- Cart dropdown -->
+                  <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
+                      <div class="space-y-4">
+                          <!-- product item -->
+                          <div class="flex items-center justify-between pb-4 border-b border-gray-line">
+                              <div class="flex items-center">
+                                  <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=200&q=80" alt="Haven Modular Sofa" class="h-12 w-12 object-cover rounded mr-2">
+                                  <div>
+                                      <p class="font-semibold">Haven Modular Sofa</p>
+                                      <p class="text-sm">Quantity: 1</p>
+                                  </div>
+                              </div>
+                              <p class="font-semibold">$3,890</p>
+                          </div>
+                          <!-- product item -->
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=200&q=80" alt="Nord Lounge Chair" class="h-12 w-12 object-cover rounded mr-2">
+                                <div>
+                                    <p class="font-semibold">Nord Lounge Chair</p>
+                                    <p class="text-sm">Quantity: 1</p>
+                                </div>
+                            </div>
+                            <p class="font-semibold">$1,240</p>
+                        </div>
+                      </div>
+                      <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
+                  </div>
+              </div>
+              <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
+                  <img src="assets/images/search-icon.svg" alt="Search"
+                      class="h-6 w-6 transition-transform transform group-hover:scale-120">
+              </a>
+              <!-- Search field -->
+              <div id="search-field"
+                  class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+                  <input type="text" class="w-full p-2 border border-gray-300 rounded"
+                      placeholder="Search for pieces...">
+              </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
+      <ul class="w-full">
+          <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Collections</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">New Arrivals</a></li>
+          <li><a href="index.html#journal" class="hover:text-secondary font-bold block py-2">Journal</a></li>
+          <li><a href="about.html" class="hover:text-secondary font-bold block py-2">About</a></li>
+          <li><a href="contact.html" class="hover:text-secondary font-bold block py-2">Contact</a></li>
+          <li><a href="cart.html" class="hover:text-secondary font-bold block py-2">Cart</a></li>
+      </ul>
+      <div class="flex flex-col mt-6 space-y-2 items-center">
+          <a href="contact.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Book a Visit</a>
+          <a href="cart.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">View Cart</a>
+      </div>
+      <div class="top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+          <input type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Search for pieces...">
+      </div>
+    </nav>
+
+    <!-- Slider -->
+    <section id="product-slider">
+        <div class="main-slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Contemporary living room with sculptural furniture">
+                    <div class="swiper-slide-content">
+                      <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Design Spaces You'll Love Coming Home To</h2>
+                      <p class="mb-4 text-white md:text-2xl">Thoughtfully crafted furniture and refined décor designed to bring calm, beauty, and comfort into everyday living.</p>
+                        <a href="shop.html" class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Explore Collection</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=1600&q=80" alt="Warm dining room with natural wood furniture">
+                    <div class="swiper-slide-content">
+                      <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Modern Comfort, Timeless Form</h2>
+                      <p class="mb-4 text-white md:text-2xl">Discover pieces that balance sculptural elegance with everyday practicality.</p>
+                        <a href="shop.html" class="bg-white hover:bg-transparent text-black hover:text-white font-semibold px-4 py-2 rounded-full inline-block border border-transparent hover:border-white">View New Arrivals</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80" alt="Minimalist bedroom with layered textures and oak finishes">
+                    <div class="swiper-slide-content">
+                      <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Quiet Luxury for Daily Rituals</h2>
+                      <p class="mb-4 text-white md:text-2xl">Create a home that feels warm, grounded, and effortlessly refined with every piece.</p>
+                        <a href="about.html" class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Meet the Brand</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Pagination -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <!-- Product banner section -->
+    <section id="product-banners">
+        <div class="container mx-auto py-10">
+            <div class="flex flex-wrap">
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Living room furniture inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Living Room</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Dining room furniture inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="category-text absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 transition duration-300">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Dining</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Bedroom furniture inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="category-text absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 transition duration-300">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Bedroom</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Home office furniture inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Office</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Lighting inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="category-text absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 transition duration-300">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Lighting</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/3 px-4 mb-8">
+                    <div class="category-banner relative overflow-hidden rounded-lg shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Outdoor furniture inspiration" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gray-light/50"></div>
+                        <div class="category-text absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4 transition duration-300">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Outdoor</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="popular-products">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold mb-4">Curated for Everyday Living</h2>
+                <p class="max-w-2xl mx-auto text-gray-600">Explore a collection of furniture that blends clean design, lasting craftsmanship, and practical functionality to create spaces that feel effortlessly inviting.</p>
+            </div>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=900&q=80" alt="Haven Modular Sofa" class="w-full object-cover mb-4 rounded-lg">
+                    <a href="single-product-page.html" class="text-lg font-semibold mb-2">Haven Modular Sofa</a>
+                    <p class="my-2">Living Room</p>
+                    <div class="flex items-center mb-4">
+                      <span class="text-lg font-bold text-primary">$3,890</span>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Nord Lounge Chair" class="w-full object-cover mb-4 rounded-lg">
+                    <a href="single-product-page.html" class="text-lg font-semibold mb-2">Nord Lounge Chair</a>
+                    <p class=" my-2">Accent Seating</p>
+                    <div class="flex items-center mb-4">
+                      <span class="text-lg font-bold text-gray-900">$1,240</span>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Aspen Dining Table" class="w-full object-cover mb-4 rounded-lg">
+                    <a href="single-product-page.html" class="text-lg font-semibold mb-2">Aspen Dining Table</a>
+                    <p class=" my-2">Dining</p>
+                    <div class="flex items-center mb-4">
+                      <span class="text-lg font-bold text-gray-900">$2,640</span>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                  </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Verona Coffee Table" class="w-full object-cover mb-4 rounded-lg">
+                    <a href="single-product-page.html" class="text-lg font-semibold">Verona Coffee Table</a>
+                    <p class="my-2">Living Room</p>
+                    <div class="flex items-center mb-4">
+                        <span class="text-lg font-bold text-primary">$1,760</span>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <!-- Latest product section -->
+    <section id="latest-products" class="py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8">Latest products</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Product 1 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                    <div>
+                      <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=800&q=80" alt="Haven Modular Sofa" class="w-full h-56 object-cover mb-4 rounded-lg">
+                      <a href="single-product-page.html" class="text-lg font-semibold mb-2 block hover:text-primary">Haven Modular Sofa</a>
+                      <p class="text-gray-500 my-2 text-sm">Living Room</p>
+                      <div class="flex items-center mb-4">
+                        <span class="text-lg font-bold text-primary">$3,890</span>
+                        <span class="text-sm line-through text-gray-400 ml-2">$4,200</span>
+                      </div>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full transition-colors">Add to Cart</button>
+                  </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                    <div>
+                      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Nord Lounge Chair" class="w-full h-56 object-cover mb-4 rounded-lg">
+                      <a href="single-product-page.html" class="text-lg font-semibold mb-2 block hover:text-primary">Nord Lounge Chair</a>
+                      <p class="text-gray-500 my-2 text-sm">Seating</p>
+                      <div class="flex items-center mb-4">
+                        <span class="text-lg font-bold text-gray-900">$1,240</span>
+                      </div>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full transition-colors">Add to Cart</button>
+                  </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                    <div>
+                      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Aspen Dining Table" class="w-full h-56 object-cover mb-4 rounded-lg">
+                      <a href="single-product-page.html" class="text-lg font-semibold mb-2 block hover:text-primary">Aspen Dining Table</a>
+                      <p class="text-gray-500 my-2 text-sm">Dining</p>
+                      <div class="flex items-center mb-4">
+                        <span class="text-lg font-bold text-gray-900">$1,850</span>
+                        <span class="text-sm line-through text-gray-400 ml-2">$2,100</span>
+                      </div>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full transition-colors">Add to Cart</button>
+                  </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                  <div class="bg-white p-3 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                    <div>
+                      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" alt="Verona Coffee Table" class="w-full h-56 object-cover mb-4 rounded-lg">
+                      <a href="single-product-page.html" class="text-lg font-semibold mb-2 block hover:text-primary">Verona Coffee Table</a>
+                      <p class="text-gray-500 my-2 text-sm">Tables</p>
+                      <div class="flex items-center mb-4">
+                          <span class="text-lg font-bold text-primary">$890</span>
+                          <span class="text-sm line-through text-gray-400 ml-2">$980</span>
+                      </div>
+                    </div>
+                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full transition-colors">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <section id="brands" class="bg-white py-16 px-4">
+        <div class="container mx-auto max-w-screen-xl px-4 testimonials">
+          <div class="text-center mb-12 lg:mb-20">
+            <h2 class="text-5xl font-bold mb-4">What Our Clients Say</h2>
+            <p class="my-7">Trusted by homeowners, designers, and architects who value thoughtful interiors.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+              <p class="text-primary text-2xl mb-4">★★★★★</p>
+              <p class="mb-6">“The quality exceeded our expectations. The craftsmanship is exceptional, and the delivery process was seamless.”</p>
+              <p class="font-semibold">— Sophia Martinez</p>
+              <p class="text-sm text-gray-600">Interior Designer</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+              <p class="text-primary text-2xl mb-4">★★★★★</p>
+              <p class="mb-6">“Every piece feels considered and beautifully made. It brought so much warmth to our apartment.”</p>
+              <p class="font-semibold">— Daniel & Elise Chen</p>
+              <p class="text-sm text-gray-600">Homeowners</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+              <p class="text-primary text-2xl mb-4">★★★★★</p>
+              <p class="mb-6">“The balance of comfort and architectural simplicity is exactly what we needed for our project.”</p>
+              <p class="font-semibold">— Marcus Hale</p>
+              <p class="text-sm text-gray-600">Architect</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+              <p class="text-primary text-2xl mb-4">★★★★★</p>
+              <p class="mb-6">“From the first consultation to delivery, the experience felt personal and polished.”</p>
+              <p class="font-semibold">— Nina Alvarez</p>
+              <p class="text-sm text-gray-600">Luxury Apartment Owner</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="banner" class="relative my-16">
+        <div class="container mx-auto px-4 py-20 rounded-lg relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');">
+            <div class="absolute inset-0 bg-black opacity-45 rounded-lg"></div>
+            <div class="relative flex flex-col items-center justify-center h-full text-center text-white py-20">
+                <h2 class="text-4xl font-bold mb-4">Furniture Designed Around the Way You Live</h2>
+                <p class="max-w-2xl mb-8">At NØVA Living, we believe great furniture should create spaces where people gather, work, relax, and make lasting memories.</p>
+                <div class="flex space-x-4">
+                    <a href="about.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">Read Our Story</a>
+                    <a href="shop.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">Browse Collections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journal" class="py-16">
+      <div class="text-center mb-12 lg:mb-20">
+          <h2 class="text-5xl font-bold mb-4">From the <span class="text-primary">Journal</span></h2>
+          <p class="my-7">Ideas, inspiration, and thoughtful guidance for creating a home that feels calm and beautifully lived in.</p>
+      </div>
+      <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+          <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
+              <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
+                  <img class="object-cover object-center w-full mb-8 rounded-xl" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1000&q=80" alt="Warm dining room styling inspiration">
+                  <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">Interior Notes</h2>
+                  <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">Creating a Home That Reflects Your Lifestyle</h1>
+                  <p class="flex-grow text-base font-medium leading-relaxed text-gray-txt">A thoughtful approach to layering comfort, texture, and silhouette so your home feels collected rather than styled.</p>
+              </div>
+              <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
+                  <img class="object-cover object-center w-full mb-8 rounded-xl" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Minimalist living room with sculptural pieces">
+                  <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">Craftsmanship</h2>
+                  <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">Choosing Furniture That Stands the Test of Time</h1>
+                  <p class="flex-grow text-base font-medium leading-relaxed text-gray-txt">We look for clean lines, durable materials, and enduring comfort in every collection we introduce.</p>
+              </div>
+              <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
+                  <img class="object-cover object-center w-full mb-8 rounded-xl" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" alt="Bedroom design with natural oak tones">
+                  <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">Seasonal Styling</h2>
+                  <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">Simple Ways to Refresh Your Living Space</h1>
+                  <p class="flex-grow text-base font-medium leading-relaxed text-gray-txt">A few considered changes in lighting, texture, and scale can make a room feel new without overwhelming it.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="subscribe" class="py-6 lg:py-24 bg-white border-t border-gray-line">
+      <div class="container mx-auto">
+          <div class="flex flex-col items-center rounded-lg p-4 sm:p-0 ">
+              <div class="mb-8">
+                  <h2 class="text-center text-xl font-bold sm:text-2xl lg:text-left lg:text-3xl">Stay Inspired</h2>
+                  <p class="text-center mt-3 text-gray-600">Be the first to discover new collections, interior styling ideas, and seasonal releases delivered straight to your inbox.</p>
+              </div>
+              <div class="flex flex-col items-center w-96 ">
+                  <form class="flex w-full gap-2">
+                      <input placeholder="Enter your email address"
+                             class="w-full flex-1 rounded-full px-3 py-2 border border-gray-300 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary" />
+                      <button
+                          class="bg-primary border border-primary hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-line">
+        <div class="container mx-auto px-4 py-10">
+          <div class="flex flex-wrap -mx-4">
+            <div class="w-full sm:w-1/6 px-4 mb-8">
+              <h3 class="text-lg font-semibold mb-4">Shop</h3>
+              <ul>
+                <li><a href="shop.html" class="hover:text-primary">Collections</a></li>
+                <li><a href="shop.html" class="hover:text-primary">New Arrivals</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Best Sellers</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Gift Cards</a></li>
+              </ul>
+            </div>
+            <div class="w-full sm:w-1/6 px-4 mb-8">
+              <h3 class="text-lg font-semibold mb-4">Company</h3>
+              <ul>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="index.html#journal" class="hover:text-primary">Journal</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+              </ul>
+            </div>
+            <div class="w-full sm:w-1/6 px-4 mb-8">
+              <h3 class="text-lg font-semibold mb-4">Customer Care</h3>
+              <ul>
+                <li><a href="cart.html" class="hover:text-primary">Shipping</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Returns</a></li>
+                <li><a href="contact.html" class="hover:text-primary">FAQs</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Support</a></li>
+              </ul>
+            </div>
+            <div class="w-full sm:w-1/6 px-4 mb-8">
+              <h3 class="text-lg font-semibold mb-4">Social</h3>
+              <ul>
+                <li><a href="#" class="hover:text-primary">Instagram</a></li>
+                <li><a href="#" class="hover:text-primary">Facebook</a></li>
+                <li><a href="#" class="hover:text-primary">Pinterest</a></li>
+                <li><a href="#" class="hover:text-primary">LinkedIn</a></li>
+              </ul>
+            </div>
+            <div class="w-full sm:w-2/6 px-4 mb-8">
+              <h3 class="text-lg font-semibold mb-4">NØVA Living</h3>
+              <p><img src="assets/images/novaliving-logo.svg" alt="NØVA Living logo" class="h-[60px] mb-4"></p>
+              <p>2210 Maple Avenue</p>
+              <p>Portland, Oregon</p>
+              <p class="text-xl font-bold my-4">+1 (503) 555-2481</p>
+              <a href="mailto:hello@novaliving.com" class="underline">hello@novaliving.com</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="py-6 border-t border-gray-line">
+          <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
+            <div class="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
+              <p class="mb-2 font-bold">&copy; 2026 NØVA Living. Crafted for modern interiors.</p>
+              <ul class="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
+                <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
+                <li><a href="#" class="hover:text-primary">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="w-full lg:w-1/4 text-center lg:text-right">
+              <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
+              <img src="/assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
+              <img src="/assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/swiper/swiper-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

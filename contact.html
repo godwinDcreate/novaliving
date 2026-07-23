@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <title>Contact NØVA Living</title>
+    <meta name="description" content="Get in touch with NØVA Living for showroom visits, design consultations, and custom furniture inquiries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-stone-50 text-gray-800">
+    <header class="bg-gray-dark sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/images/novaliving-logo-dark.svg" alt="NØVA Living logo" class="h-14 w-auto mr-4">
+            </a>
+            <nav class="hidden lg:flex md:flex-grow justify-center">
+                <ul class="flex justify-center space-x-4 text-white">
+                    <li><a href="index.html" class="hover:text-secondary font-semibold">Home</a></li>
+                    <li><a href="shop.html" class="hover:text-secondary font-semibold">Collections</a></li>
+                    <li><a href="index.html#journal" class="hover:text-secondary font-semibold">Journal</a></li>
+                    <li><a href="about.html" class="hover:text-secondary font-semibold">About</a></li>
+                    <li><a href="contact.html" class="hover:text-secondary font-semibold">Contact</a></li>
+                    <li><a href="cart.html" class="hover:text-secondary font-semibold">Cart</a></li>
+                </ul>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="contact.html" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Book a Visit</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16">
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-10">
+            <div>
+                <p class="text-sm uppercase tracking-[0.3em] text-primary mb-3">Visit our showroom</p>
+                <h1 class="text-4xl font-bold mb-4">Let’s find the right pieces for your home.</h1>
+                <p class="text-lg text-gray-600 mb-8">Whether you are furnishing a first apartment or reimagining a full residence, our team would be delighted to guide you.</p>
+                <div class="space-y-4 text-gray-700">
+                    <p><strong>Studio address:</strong> 2210 Maple Avenue, Portland, Oregon</p>
+                    <p><strong>Phone:</strong> +1 (503) 555-2481</p>
+                    <p><strong>Email:</strong> hello@novaliving.com</p>
+                    <p><strong>Hours:</strong> Monday – Saturday, 10:00am – 6:00pm</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Project type</label>
+                        <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+                            <option>Showroom consultation</option>
+                            <option>Custom furniture inquiry</option>
+                            <option>Interior styling support</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="5" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Tell us about your space and what you’re looking for."></textarea>
+                    </div>
+                    <button class="bg-primary hover:bg-transparent border border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-line bg-white">
+        <div class="container mx-auto px-4 py-10">
+            <div class="flex flex-wrap justify-between items-center gap-4">
+                <div>
+                    <img src="assets/images/novaliving-logo.svg" alt="NØVA Living logo" class="h-[60px] mb-4">
+                    <p class="text-gray-600">Thoughtful furniture for beautifully lived-in spaces.</p>
+                </div>
+                <div class="text-sm text-gray-600">
+                    <p>2210 Maple Avenue</p>
+                    <p>Portland, Oregon</p>
+                    <a href="mailto:hello@novaliving.com" class="underline">hello@novaliving.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

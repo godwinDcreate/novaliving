@@ -1,0 +1,48 @@
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Compile Tailwind CSS on startup
+exec('npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/styles.css', (err, stdout, stderr) => {
+  if (err) {
+    console.error('Tailwind build error:', stderr);
+  } else {
+    console.log('Tailwind CSS built successfully.');
+  }
+});
+
+// Serve static files from root directory
+app.use(express.static(__dirname));
+
+// Default route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Fallback for HTML routes without extension
+app.get('/:page', (req, res, next) => {
+  const page = req.params.page;
+  if (!page.includes('.')) {
+    const filePath = path.join(__dirname, `${page}.html`);
+    return res.sendFile(filePath, (err) => {
+      if (err) next();
+    });
+  }
+  next();
+});
+
+// 404 fallback
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on port ${PORT}`);
+});

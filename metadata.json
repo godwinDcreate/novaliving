@@ -1,0 +1,6 @@
+{
+  "name": "NØVA Living",
+  "description": "Contemporary furniture and home décor studio crafting timeless pieces for elegant, modern interiors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
