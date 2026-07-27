@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "npx @tailwindcss/cli -i assets/css/tailwind.css -o assets/css/styles.css --minify",
+    "build": "npx @tailwindcss/cli -i public/assets/css/tailwind.css -o public/assets/css/styles.css --minify",
     "lint": "echo 'No linter configured'"
   },
   "dependencies": {
