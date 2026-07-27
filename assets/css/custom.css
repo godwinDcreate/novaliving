@@ -30,8 +30,19 @@ body {
   color: #C4B5A5;
 }
 
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* Swiper Slider Styling */
-.main-slider {
+#product-slider {
+  position: relative;
+}
+
+.main-slider,
+.main-slider.swiper,
+.main-slider.swiper-container {
   position: relative;
   width: 100%;
   height: 75vh;
@@ -45,6 +56,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .main-slider .swiper-slide img {
@@ -63,20 +75,61 @@ body {
   backdrop-filter: blur(8px);
   padding: 2.5rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+#product-slider .swiper-button-prev,
+#product-slider .swiper-button-next {
+  color: #fff;
+  --swiper-navigation-size: 28px;
+  background: rgba(30, 30, 30, 0.45);
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+#product-slider .swiper-button-prev::after,
+#product-slider .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#product-slider .swiper-pagination {
+  bottom: 1.25rem;
+}
+
+#product-slider .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.5;
+}
+
+#product-slider .swiper-pagination-bullet-active {
+  background: #8C7A6B;
+  opacity: 1;
 }
 
 .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #1E1E1E;
   color: #FFFFFF;
   padding: 1.5rem;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 5.5rem;
   left: 0;
   right: 0;
+  bottom: 0;
   z-index: 40;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+}
+
+.mobile-menu.hidden {
+  display: none !important;
 }
 
 .category-banner img {
@@ -89,4 +142,46 @@ body {
 
 .cart-wrapper:hover .group-hover\:block {
   display: block;
+}
+
+/* Product tabs */
+.tab {
+  padding: 0.5rem 0;
+  margin-right: 0.25rem;
+  border-bottom: 2px solid transparent;
+  color: #6b7280;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+}
+
+.tab.active,
+.tab[aria-selected="true"] {
+  color: #1E1E1E;
+  border-bottom-color: #8C7A6B;
+}
+
+.tab:hover {
+  color: #8C7A6B;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide-content {
+    padding: 1.25rem;
+    bottom: 12%;
+  }
+
+  .swiper-slide-content h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .swiper-slide-content p {
+    font-size: 1rem;
+  }
 }

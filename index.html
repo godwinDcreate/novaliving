@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
@@ -60,7 +60,7 @@
               <a href="register.html"
                   class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
               <div class="relative group cart-wrapper">
-                  <a href="/cart.html" >
+                  <a href="cart.html" >
                       <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
                   </a>
                   <!-- Cart dropdown -->
@@ -89,7 +89,7 @@
                             <p class="font-semibold">$1,240</p>
                         </div>
                       </div>
-                      <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
+                      <a href="cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
                   </div>
               </div>
               <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
@@ -128,7 +128,7 @@
 
     <!-- Slider -->
     <section id="product-slider">
-        <div class="main-slider swiper-container">
+        <div class="main-slider swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Contemporary living room with sculptural furniture">
@@ -155,8 +155,8 @@
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <!-- Slider Pagination -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </section>
@@ -503,15 +503,15 @@
               </ul>
             </div>
             <div class="w-full lg:w-1/4 text-center lg:text-right">
-              <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
-              <img src="/assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
-              <img src="/assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
+              <img src="assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
+              <img src="assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
+              <img src="assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
             </div>
           </div>
         </div>
     </footer>
 
-    <script src="node_modules/swiper/swiper-bundle.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="assets/js/script.js"></script>
 

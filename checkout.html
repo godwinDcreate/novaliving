@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">    
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
@@ -59,7 +59,7 @@
               <a href="register.html"
                   class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
               <div class="relative group cart-wrapper">
-                  <a href="/cart.html" >
+                  <a href="cart.html" >
                       <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
                   </a>
                   <!-- Cart dropdown -->
@@ -88,7 +88,7 @@
                             <p class="font-semibold">$1,240</p>
                         </div>
                       </div>
-                      <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
+                      <a href="cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
                   </div>
               </div>
               <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
@@ -105,61 +105,23 @@
         </div>
     </header>
 
-    <!-- Mobile menu -->
-    <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex flex-col items-center space-y-8 lg:hidden">
+        <!-- Mobile menu -->
+    <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
       <ul class="w-full">
           <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
-
-          <!-- Men Dropdown -->
-          <li class="relative group" x-data="{ open: false }">
-              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
-                <span>Men</span>
-                <span @click.stop="open = !open">
-                    <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
-                </span>
-              </a>
-              <ul class="mobile-dropdown-menu" x-show="open" x-transition class="space-y-2">
-                  <li><a href="shop.html" class="hover:text-secondary font-bold block pt-2 pb-3">Shop Men</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 1</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
-              </ul>
-          </li>
-
-          <!-- Women Dropdown -->
-          <li class="relative group" x-data="{ open: false }">
-              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
-                    <span>Women</span>
-                    <span @click.stop="open = !open">
-                        <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
-                    </span>
-              </a>
-              <ul class="mobile-dropdown-menu" x-show="open" x-transition class="pl-4 space-y-2">
-                  <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop Women</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 1</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 2</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 3</a></li>
-              </ul>
-          </li>
-
-          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
-          <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Product</a></li>
-          <li><a href="404.html" class="hover:text-secondary font-bold block py-2">404 page</a></li>
-          <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Collections</a></li>
+          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">New Arrivals</a></li>
+          <li><a href="index.html#journal" class="hover:text-secondary font-bold block py-2">Journal</a></li>
+          <li><a href="about.html" class="hover:text-secondary font-bold block py-2">About</a></li>
+          <li><a href="contact.html" class="hover:text-secondary font-bold block py-2">Contact</a></li>
+          <li><a href="cart.html" class="hover:text-secondary font-bold block py-2">Cart</a></li>
       </ul>
       <div class="flex flex-col mt-6 space-y-2 items-center">
-          <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Register</a>
-          <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Login</a>
-          <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
+          <a href="contact.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Book a Visit</a>
+          <a href="cart.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">View Cart</a>
       </div>
-      <!-- Search field -->
-      <div 
-          class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
-          <input type="text" class="w-full p-2 border border-gray-300 rounded"
-              placeholder="Search for products...">
+      <div class="top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+          <input type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Search for pieces...">
       </div>
     </nav>
 
@@ -236,33 +198,32 @@
         <div class="container mx-auto px-4 py-10">
         <div class="flex flex-wrap -mx-4">
             <!-- Menu 1 -->
-            <div class="w-full sm:w-1/6 px-4 mb-8">
+                        <div class="w-full sm:w-1/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Shop</h3>
             <ul>
-                <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
-                <li><a href="/single-product-page.html" class="hover:text-primary">Women</a></li>
-                <li><a href="/shop.html" class="hover:text-primary">Men</a></li>
-                <li><a href="/single-product-page.html" class="hover:text-primary">Shoes</a></li>
-                <li><a href="/single-product-page.html" class="hover:text-primary">Accessories</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Collections</a></li>
+                <li><a href="shop.html" class="hover:text-primary">New Arrivals</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Best Sellers</a></li>
+                <li><a href="shop.html" class="hover:text-primary">Gift Cards</a></li>
             </ul>
             </div>
             <!-- Menu 2 -->
             <div class="w-full sm:w-1/6 px-4 mb-8">
-            <h3 class="text-lg font-semibold mb-4">Pages</h3>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
             <ul>
-                <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
-                <li><a href="/single-product-page.html" class="hover:text-primary">Product</a></li>
-                <li><a href="/checkout.html" class="hover:text-primary">Checkout</a></li>
-                <li><a href="/404.html" class="hover:text-primary">404</a></li>
+                <li><a href="about.html" class="hover:text-primary">About</a></li>
+                <li><a href="index.html#journal" class="hover:text-primary">Journal</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
             </ul>
             </div>
             <!-- Menu 3 -->
             <div class="w-full sm:w-1/6 px-4 mb-8">
-            <h3 class="text-lg font-semibold mb-4">Account</h3>
+            <h3 class="text-lg font-semibold mb-4">Customer Care</h3>
             <ul>
-                <li><a href="/cart.html" class="hover:text-primary">Cart</a></li>
-                <li><a href="/register.html" class="hover:text-primary">Registration</a></li>
-                <li><a href="/register.html" class="hover:text-primary">Login</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Shipping</a></li>
+                <li><a href="cart.html" class="hover:text-primary">Returns</a></li>
+                <li><a href="contact.html" class="hover:text-primary">FAQs</a></li>
+                <li><a href="contact.html" class="hover:text-primary">Support</a></li>
             </ul>
             </div>
             <!-- Social Media -->
